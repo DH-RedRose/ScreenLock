@@ -1,6 +1,4 @@
 ﻿using System.IO;
-using System.Reflection;
-using System.Windows.Forms;
 
 namespace ScreenLock.Classes
 { 

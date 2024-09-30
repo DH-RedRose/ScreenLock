@@ -1,9 +1,6 @@
-﻿using Microsoft.VisualBasic;
-using ScreenLock.Properties;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.IO;
 using System.Text.Json;
-using System.Windows;
 using System.Windows.Input;
 
 namespace ScreenLock.Classes

@@ -1,10 +1,8 @@
 ﻿using System.Diagnostics;
 using System.Windows;
-using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Interop;
 using ScreenLock.Classes;
-using ScreenLock.Properties;
 
 namespace ScreenLock
 {
