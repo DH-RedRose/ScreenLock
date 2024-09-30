@@ -1,0 +1,149 @@
+﻿<Window
+    x:Class="ScreenLock.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Screen Lock"
+    AllowsTransparency="True"
+    Background="Transparent"
+    Closed="Window_Closed"
+    Loaded="Window_Loaded"
+    ShowInTaskbar="False"
+    Topmost="True"
+    WindowState="Normal"
+    WindowStyle="None">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/GeneralStyles.xaml" />
+                <ResourceDictionary Source="Theme/SliderStyles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid
+        Name="OverlayGrid"
+        Width="500"
+        Height="417"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="44" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Rectangle
+            Grid.RowSpan="2"
+            Grid.ColumnSpan="2"
+            Margin="-50,-50,-50,-50"
+            Fill="#1C1C1C"
+            Opacity="0.9">
+            <Rectangle.Effect>
+                <BlurEffect Radius="30" />
+            </Rectangle.Effect>
+        </Rectangle>
+
+        <TextBlock
+            Grid.ColumnSpan="2"
+            Width="134"
+            Height="32"
+            Margin="183,0,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            FontSize="24"
+            FontWeight="Bold"
+            Foreground="#FF8C00"
+            Text="Screen Lock" />
+
+        <StackPanel Grid.Row="1" Margin="20,22,20,10">
+
+            <ToggleButton
+                x:Name="LockToggleButton"
+                Checked="LockToggleButton_Checked"
+                Content="Lock"
+                Style="{DynamicResource ToggleButtonStyle}"
+                Unchecked="LockToggleButton_Unchecked" />
+
+            <ToggleButton
+                x:Name="HotkeyActionToggleButton"
+                Checked="HotkeyActionToggleButton_Checked"
+                IsChecked="True"
+                Style="{DynamicResource ToggleButtonStyle}"
+                Unchecked="HotkeyActionToggleButton_Unchecked" />
+
+            <Button
+                x:Name="MinimizeButton"
+                Click="MinimizeButton_Click"
+                Content="Minimize"
+                Style="{DynamicResource ButtonStyle}" />
+
+            <Button
+                x:Name="ExitButton"
+                Click="ExitButton_Click"
+                Content="Exit"
+                Style="{DynamicResource ButtonStyle}" />
+        </StackPanel>
+
+        <StackPanel
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="20,10,20,10">
+            <TextBlock
+                Margin="0,5,0,5"
+                VerticalAlignment="Center"
+                FontSize="16"
+                Foreground="#FF8C00"
+                Text="Set Screen Padding:"
+                TextAlignment="Center" />
+
+            <StackPanel
+                Margin="20,10,20,10"
+                HorizontalAlignment="Center"
+                Orientation="Horizontal">
+                <RepeatButton
+                    x:Name="DecreaseButton"
+                    Margin="0,0,25,0"
+                    Click="DecreaseButton_Click"
+                    Style="{StaticResource SliderRepeatButton1}" />
+
+
+                <TextBlock
+                    x:Name="PaddingValueTextBlock"
+                    VerticalAlignment="Center"
+                    FontSize="16"
+                    Width="20"
+                    Foreground="#FF8C00"
+                    Text="{Binding Value, ElementName=PaddingSlider, StringFormat=Padding: \{0:0\}}" HorizontalAlignment="Center" TextAlignment="Center" />
+
+                <RepeatButton
+                    x:Name="IncreaseButton"
+                    Margin="25,0,0,0"
+                    Click="IncreaseButton_Click"
+                    Style="{StaticResource SliderRepeatButton}" />
+            </StackPanel>
+            <Rectangle Height="50"/>
+            <Label
+                x:Name="HotkeyLabel"
+                Padding="5,6,5,5"
+                HorizontalContentAlignment="Center"
+                Content="Press your hotkey"
+                Focusable="True"
+                Style="{StaticResource RoundedLabelStyle}" />
+            <Button
+                x:Name="SetHotkeyButton"
+                Height="49"
+                Click="SetHotkeyButton_Click"
+                Content="Set Hotkey"
+                Style="{DynamicResource ButtonStyle}" />
+        </StackPanel>
+        <Button
+                x:Name="DeleteButton"
+                Click="DeleteSettings_Click"
+                Content="Delete Settings"
+                Style="{DynamicResource DANGERButton}" Grid.ColumnSpan="2" Margin="130,303,130,20" Grid.Row="1" />
+    </Grid>
+</Window>
