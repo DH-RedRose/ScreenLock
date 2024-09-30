@@ -26,8 +26,6 @@ namespace ScreenLock.Classes
 
         private readonly Icon? lockedIcon;
         private readonly Icon? unlockedIcon;
-
-
         public IconTray(Action onOpen, Action onExit, Action onToggle)
         {
             string resourcePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources");
