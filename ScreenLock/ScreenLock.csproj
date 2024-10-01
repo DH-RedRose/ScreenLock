@@ -1,19 +1,17 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<Project Sdk="Microsoft.NET.Sdk;Microsoft.NET.Sdk.Publish">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-	 <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
-	 <ApplicationIcon>Resources\ScreenLockImage.ico</ApplicationIcon>
-	 <SupportedOSPlatformVersion>8.0</SupportedOSPlatformVersion>
-	 <UseWPF>True</UseWPF>
-	 <StartupObject>ScreenLock.App</StartupObject>
-	 <UseWindowsForms>True</UseWindowsForms>
-	 <RunAnalyzersDuringLiveAnalysis>True</RunAnalyzersDuringLiveAnalysis>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <ApplicationIcon>Resources\ScreenLockImage.ico</ApplicationIcon>
+    <SupportedOSPlatformVersion>8.0</SupportedOSPlatformVersion>
+    <UseWPF>True</UseWPF>
+    <StartupObject>ScreenLock.App</StartupObject>
+    <UseWindowsForms>True</UseWindowsForms>
+    <RunAnalyzersDuringLiveAnalysis>True</RunAnalyzersDuringLiveAnalysis>
   </PropertyGroup>
-
   <ItemGroup>
     <None Remove="Resources\ScreenLocked.ico" />
     <None Remove="Resources\ScreenUnlocked.ico" />
@@ -30,7 +28,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <None Update="HotkeySettings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -41,11 +38,9 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-
   <ItemGroup>
     <Folder Include="Icons\" />
   </ItemGroup>
-
   <ItemGroup>
     <Content Include="Resources\ScreenLocked.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -55,5 +50,4 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-
 </Project>
