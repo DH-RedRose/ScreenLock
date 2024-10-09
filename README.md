@@ -18,4 +18,6 @@ Padding + / - changes the screen padding this is set to a Max of 20 and a Min of
 
 Set Hotkey: This button allows the user to change their hotkey to any combination or individual ket they would like. (Alt key is not Available)
 
+Saved Data can be found under Documents\ScreenLock
+
 
